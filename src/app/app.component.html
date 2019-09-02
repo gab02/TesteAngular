@@ -1,0 +1,116 @@
+<div id="row">
+    <!--ínicio primmeira coluna-->
+    <div class="column" style="background-color:#aaa;">
+        <div>
+            <!--ínicio primeiro card-->
+
+            <div class="card" id="card1" routerLink="/home" style="max-width: 20rem; margin-left: 20%; margin-top: 20%;">
+                <div class="card-header" id="cardHeader" ng-class="{'green':item.perfil=='Agressivo','red': item.perfil=='moderado'}">
+                    renda fixa
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"> BRADESCO FI RF IDKA PRÉ 2</h5>
+                    <br>
+                    <p class="card-text">
+                        CNPJ:
+                    </p>
+                    <select class="mdb-select md-form colorful-select dropdown-primary">
+                        <option *ngFor="let item of fundos_arr">{{item.cnpj}}</option><br>
+                    </select>
+                    <p style="color:#96999b3f">_______________________________________</p>
+                    <div>
+                        <p>valor mínimo</p>
+                        <p style="margin-left: 40%">Líquidez</p>
+                    </div>
+                    <div>
+                        <p>R$</p>
+                        <select class="mdb-select md-form colorful-select dropdown-primary">
+                                <option *ngFor="let item of fundos_arr">{{item.aplicacao_minima}}</option>
+                                
+                        </select>
+                        <p style="margin-left: 78%" *ngFor="let item of fundos_arr" id="liquidez"><b> {{item.liquidez}} </b></p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div>
+                        <p>Rentabilidade anual</p>
+                        <a routerLink="/home">
+                            <h6 class="detalhes"> Detalhes</h6>
+                        </a>
+                    </div>
+                    <div>
+                        <p style="margin-top: -25px;" *ngFor="let item of fundos_arr">{{item.rentabilidade}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--fim primeiro card-->
+        </div>
+    </div>
+    <!--fim primeira coluna-->
+
+
+    <!--ínicio segunda coluna-->
+    <div class="column" style="background-color:#bbb;">
+        <div>
+            <!--ínicio segundo card-->
+            <div class="card" routerLink="/home" id="card2" style="max-width: 20rem; margin-left: 10%; margin-top: 20%;">
+                <div class="card-header" id="cardHeader">
+                    renda fixa
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"> BRAM H FI RF LP VOLGA</h5>
+                    <br>
+                    <p class="card-text">
+                        CNPJ:
+                    </p>
+                    <select class="mdb-select md-form colorful-select dropdown-primary">
+
+                    <option *ngFor="let item of fundos_arr">{{item.cnpj}}</option><br>
+                    </select>
+                    <p style="color:#96999b3f">_______________________________________</p>
+                    <div>
+                        <p>valor mínimo</p>
+                        <p style="margin-left: 40%">Líquidez</p>
+                    </div>
+                    <div>
+                        <p>R$</p>
+
+                        <select class="mdb-select md-form colorful-select dropdown-primary">
+                                <option *ngFor="let item of fundos_arr">{{item.aplicacao_minima}}</option>
+                                
+                        </select>
+
+
+
+                        <p style="margin-left: 78%" *ngFor="let item of fundos_arr"><b> {{item.liquidez}} </b></p>
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div>
+                        <p>Rentabilidade anual</p>
+                        <a routerLink="/home">
+                            <h6 class="detalhes"> Detalhes</h6>
+                        </a>
+                    </div>
+                    <div>
+
+                        <p style="margin-top: -25px;" *ngFor="let item of fundos_arr">{{item.rentabilidade}}</p>
+
+
+                    </div>
+                </div>
+            </div>
+            <!--fim segundo card-->
+        </div>
+    </div>
+    <!--fim segunda coluna-->
+
+
+
+
+
+
+    <router-outlet>
+    </router-outlet>
